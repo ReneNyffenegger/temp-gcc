@@ -1,0 +1,3 @@
+Just generate RTL for a function instead of compiling it.
+
+Usually used with -fdump-rtl-expand.
