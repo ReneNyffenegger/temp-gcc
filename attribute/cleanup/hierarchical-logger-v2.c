@@ -15,6 +15,7 @@ void tq84_log_print_indent(void) {
 
 int tq84_log_indent(const char *txt) {
    tq84_log_print_indent();
+   TQ84_PRINT("TQ84: ");
    TQ84_PRINT(txt);
    TQ84_PRINT(" {\n");
 // tq84_log_text(txt);
@@ -26,6 +27,7 @@ int tq84_log_indent(const char *txt) {
 
 void tq84_log_text(const char *txt) {
    tq84_log_print_indent();
+   TQ84_PRINT("TQ84: ");
    TQ84_PRINT(txt);
    TQ84_PRINT("\n");
 }
