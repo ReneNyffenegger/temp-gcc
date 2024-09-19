@@ -21,18 +21,24 @@ void log_print_indent() {
    }
 }
 
-void log_indent(char *const txt) {
-   log_text(txt);
+int log_indent(const char *txt) {
+   log_print_indent();
+   printf(txt);
+   printf(" {\n");
+// log_text(txt);
    log_indent_ ++;
+   return 0;
 // printf(txt);
 
 }
 
-void log_text(char *const txt) {
+void log_text(const char *txt) {
    log_print_indent();
    printf("%s\n", txt);
 }
 
-void log_dedent() {
+void log_dedent(int*) {
    log_indent_--;
+   log_print_indent();
+   printf("}\n");
 }

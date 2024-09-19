@@ -1,16 +1,15 @@
 EXECUTABLE := prog
 
-# Object files
-OBJECTS := main.o func.o hierarchical-logger.c
+OBJECTS := \
+  main.o \
+	func.o \
+	hierarchical-logger.o
 
-# Rule to link the executable
 $(EXECUTABLE): $(OBJECTS)
-	$(CC) -o $(EXECUTABLE) $(OBJECTS)
+	gcc -o $@ $^
 
-# Rule to compile each object file from its corresponding .c source file
-%.o: %.c
+%.o: %.c hierarchical-logger.h
 	$(CC) -c $< -o $@
 
-# Clean up build artifacts
 clean:
 	rm -f $(OBJECTS) $(EXECUTABLE)

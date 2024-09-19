@@ -4,8 +4,8 @@
 
 void func() {
 
-  log_indent("func");
+  int x __attribute__(( cleanup(log_dedent) )) = log_indent(__func__);
   log_text("in func");
-  log_dedent();
+//log_dedent();
 
 }

@@ -1,4 +1,4 @@
 
-void log_indent(char *const txt);
-void log_text(char *const txt);
-void log_dedent();
+int log_indent(const char *txt);
+void log_text(const char *txt);
+void log_dedent(int*);
