@@ -37,11 +37,17 @@ int tq84_log_indent(const char *fmt, ...) {
 
 }
 
-void tq84_log_text(const char *txt) {
+void tq84_log_text(const char *fmt, ...) {
+
+   va_list args;
+   va_start(args, fmt);
+
    tq84_log_print_indent();
    TQ84_PRINTF("TQ84: ");
-   TQ84_PRINTF(txt);
+   TQ84_VPRINTF(fmt, args);
    TQ84_PRINTF("\n");
+
+   va_end(args);
 }
 
 void tq84_log_dedent(int*) {
