@@ -29,8 +29,11 @@ LNK_OPTS=
 LNK_OPTS+=-Wl,--warn-common
 
 #
-prog: main.o
-	gcc $(LNK_OPTS) main.o -o prog
+prog: main.o func.o
+	gcc $(LNK_OPTS) main.o func.o -o prog
 
-main.o: main.c Makefile
+main.o: main.c func.h Makefile
 	gcc $(C_OPTS) -O2 -c main.c -o main.o
+
+func.o: func.c func.h Makefile
+	gcc $(C_OPTS) -O2 -c func.c -o func.o
