@@ -1,11 +1,11 @@
 
 all: no-protection.S  stack-protector.S stack-protector-strong.S
 
-no-protection.S: prog.c
+no-protection.S: func.c
 	gcc -S -masm=intel $< -o $@
 
-stack-protector.S: prog.c
+stack-protector.S: func.c
 	gcc -S -masm=intel $< -o $@ -fstack-protector
 
-stack-protector-strong.S: prog.c
+stack-protector-strong.S: func.c
 	gcc -S -masm=intel $< -o $@ -fstack-protector-strong
